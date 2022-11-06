@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Weather App</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Weather App</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <form class="d-flex" role="search">
+              <input class="form-control me-3" type="search" placeholder="Search any town or city" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+    </nav>
+      
+    <h1 id="cityName">London</h1>
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h6 id= "currentDay" class="card-subtitle mb-2 text-muted">Monday</h6>
+            <h5 id ="cDTemp" class="card-title">9°c</h5>
+            <li id="cDWind" class="list-group-item">windy</li>
+            <li id="cDHumidity" class="list-group-item">Humidity: 10% </li>
+            <li id="cDHumidity" class="list-group-item">A third item</li>
+        </div>
+    </div>
+
+
+    
+</body>
+</html>
