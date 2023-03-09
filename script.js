@@ -9,12 +9,13 @@ const cityName = document.getElementById('cityName')
 
 
 searchButton.addEventListener("click", async function(event){
+    $("#hi").empty()
+    $("#cityName").empty()
     event.preventDefault();
     var inputValue = searchInput.value;
     const location = await locationRetrival(inputValue);
     const { lat, lon } = location;
-    await weatherRetrival(lat, lon)
-    location.reload();
+    await weatherRetrival(lat, lon);
 })
 
 async function locationRetrival(inputLocation){
@@ -27,7 +28,6 @@ async function locationRetrival(inputLocation){
 
 
 async function weatherRetrival(lat, lon){
-    console.log("weather")
     const response = await fetch ("http://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=149603609ebf41d4d39209c578af7f8c")
     const data = await response.json();
     console.log(data);
@@ -62,8 +62,6 @@ async function weatherRetrival(lat, lon){
         </div>`);
 
     $("#hi").append(cards);
-    console.log(dayWeather);
-    console.log(cards)
     }
 }
 
@@ -72,7 +70,3 @@ async function searchWeather(){
     const { lat, lon } = location;
     await weatherRetrival(lat, lon)
 }
-
-
-console.log();
-console.log(day1);
