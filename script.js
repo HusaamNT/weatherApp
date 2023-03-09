@@ -14,6 +14,7 @@ searchButton.addEventListener("click", async function(event){
     const location = await locationRetrival(inputValue);
     const { lat, lon } = location;
     await weatherRetrival(lat, lon)
+    location.reload();
 })
 
 async function locationRetrival(inputLocation){
@@ -28,9 +29,8 @@ async function locationRetrival(inputLocation){
 async function weatherRetrival(lat, lon){
     console.log("weather")
     const response = await fetch ("http://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=149603609ebf41d4d39209c578af7f8c")
-    console.log(response)
     const data = await response.json();
-    
+    console.log(data);
     // const day1 = (data.list[3])
     // const day1Temp = (data.list[3].main.temp) - 273;
     // const day1Humid = (data.list[3].main.humidity)
@@ -40,6 +40,9 @@ async function weatherRetrival(lat, lon){
     // const day4 = (data.list[27]);
     // const day5 = (data.list[35]);
 
+    const searchedCity = $(`<h1>${data.city.name}</h1>`);
+
+    $("#cityName").append(searchedCity);
 
     const numbers = [3, 11, 19, 27, 35];
     const dayWeather = {};   
@@ -70,7 +73,6 @@ async function searchWeather(){
     await weatherRetrival(lat, lon)
 }
 
-searchWeather()
 
 console.log();
 console.log(day1);
